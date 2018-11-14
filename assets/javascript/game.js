@@ -10,20 +10,25 @@ var computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.len
 document.onkeyup=function(event){
     var userGuess = event.key;
     
-    if(guesses===0){
-        losses++;
-        guesses=9;
-        computerGuess= computerChoice[Math.floor(Math.random() * computerChoice.length)];
-    }
-    else if(userGuess===computerGuess){
+    if(userGuess===computerGuess){
         wins++;
         guesses=9;
         computerGuess= computerChoice[Math.floor(Math.random() * computerChoice.length)];
-
+        alert("You Win :)")
     }
+
+    else if(guesses===1){
+        losses++;
+        guesses=9;
+        computerGuess= computerChoice[Math.floor(Math.random() * computerChoice.length)];
+        alert("You Lose :(")
+    }
+
     else if(!(userGuess===computerGuess)){
         guesses--;
     }
+    
+    
    
 
     function test(){

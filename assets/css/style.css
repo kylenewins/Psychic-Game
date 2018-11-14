@@ -1,0 +1,15 @@
+#wins{
+    color:Green;
+}
+
+#losses{
+    color:red;
+}
+
+#guesses {
+    color:orange;
+}
+
+#pastGuesses {
+    color:purple;
+}

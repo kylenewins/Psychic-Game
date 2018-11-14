@@ -8,13 +8,16 @@
 </head>
 
 <body>
-    <script src="assets/javascript/game.js"></script>
+    <script src="assets/javascript/game.js">
+        document.getElementById("wins").innerText = wins;
+    </script>
 
     <h1>The Psychic Game!</h1>
     <h4>Guess What Letter I'm Thinking...</h4>
-    <p>Wins: </p>
-    <p>Losses: </p>
-    <p>Guesses Left: </p>
-    <p>Your Guesses so Far: </p>
+    <p id="wins">Wins: </p>
+    <p id="losses">Losses: </p>
+    <p id="guesses">Guesses Left: </p>
+    <p id="pastGuesses">Your Guesses so Far: </p>
+
 </body>
 </html>
