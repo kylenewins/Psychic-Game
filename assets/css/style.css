@@ -1,12 +1,12 @@
-#wins{
+#winsText{
     color:Green;
 }
 
-#losses{
+#lossesText{
     color:red;
 }
 
-#guesses {
+#guessesText {
     color:orange;
 }
 

@@ -1,3 +1,4 @@
+//an array of every possible letter choice
 var computerChoice = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m"];
 
 
@@ -7,6 +8,9 @@ var guesses=9;
 
 var computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)];
 
+document.getElementById("winsText");
+
+//Starts the event function
 document.onkeyup=function(event){
     var userGuess = event.key;
     
@@ -14,7 +18,7 @@ document.onkeyup=function(event){
         wins++;
         guesses=9;
         computerGuess= computerChoice[Math.floor(Math.random() * computerChoice.length)];
-        alert("You Win :)")
+        alert("You Win :)");
     }
 
     else if(guesses===1){
@@ -28,7 +32,6 @@ document.onkeyup=function(event){
         guesses--;
     }
     
-    
    
 
     function test(){
@@ -39,6 +42,13 @@ document.onkeyup=function(event){
         console.log("wins: " + wins);
     }
     test()
+
+    document.getElementById("winsText").innerText = "Wins: " + wins
+    document.getElementById("lossesText").innerText = "Losses: " + losses;
+    document.getElementById("guessesText").innerText = "Guesses Left: " + guesses;
+    document.getElementById("pastGuesses").innerText = "Your Guesses so Far: " + userGuess;
+    //need to figure out how to get the user guesses to stay on screen
+
 }
 
 
