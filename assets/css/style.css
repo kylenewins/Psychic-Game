@@ -13,3 +13,9 @@
 #pastGuesses {
     color:purple;
 }
+
+.guesses {
+    display: inline-block;
+    margin-right: 5px;
+    text-align:left;
+}

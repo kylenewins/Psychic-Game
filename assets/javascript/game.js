@@ -8,17 +8,33 @@ var guesses=9;
 
 var computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)];
 
+
 document.getElementById("winsText");
 
 //Starts the event function
 document.onkeyup=function(event){
     var userGuess = event.key;
     
+//I introduced a little jQuery and a new function to attempt to write the guesses in-line
+//for some reason after the gameReset function runs, It is indenting the guesses text
+
+    function gameReset() {
+        $(".guesses").empty();
+    }
+
+    var emptyString = "";
+    emptyString = emptyString + userGuess;
+    var guessDiv = $("<p>")
+    guessDiv.addClass("guesses");
+    guessDiv.text(emptyString)
+    $("#pastGuesses").append( guessDiv);
+    
     if(userGuess===computerGuess){
         wins++;
         guesses=9;
         computerGuess= computerChoice[Math.floor(Math.random() * computerChoice.length)];
         alert("You Win :)");
+        gameReset();
     }
 
     else if(guesses===1){
@@ -26,6 +42,7 @@ document.onkeyup=function(event){
         guesses=9;
         computerGuess= computerChoice[Math.floor(Math.random() * computerChoice.length)];
         alert("You Lose :(")
+        gameReset();
     }
 
     else if(!(userGuess===computerGuess)){
@@ -46,8 +63,7 @@ document.onkeyup=function(event){
     document.getElementById("winsText").innerText = "Wins: " + wins
     document.getElementById("lossesText").innerText = "Losses: " + losses;
     document.getElementById("guessesText").innerText = "Guesses Left: " + guesses;
-    document.getElementById("pastGuesses").innerText = "Your Guesses so Far: " + userGuess;
-    //need to figure out how to get the user guesses to stay on screen
+   
 
 }
 
